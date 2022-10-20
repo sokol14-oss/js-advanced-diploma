@@ -5,6 +5,7 @@ export default class GameController {
   }
 
   init() {
+    drawUi(theme);
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
   }
