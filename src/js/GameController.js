@@ -1,3 +1,7 @@
+import Character from "./Character";
+import PositionedCharacter from "./PositionedCharacter";
+import {redrawPositions} from "./GamePlay";
+
 export default class GameController {
   constructor(gamePlay, stateService) {
     this.gamePlay = gamePlay;
@@ -20,5 +24,14 @@ export default class GameController {
 
   onCellLeave(index) {
     // TODO: react to mouse leave
+  }
+  getPositions() {
+    const positionedCharacter = [this.character, this.position];
+    this.redrawPositions(positionedCharacter);
+    if(positionedCharacter.includes(...this.character)) {
+      return false;
+    }
+
+    
   }
 }
